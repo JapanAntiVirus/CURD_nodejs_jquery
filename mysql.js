@@ -11,7 +11,7 @@ let config = {
 let mysql_conn;
 
 function query(sql, args={}) {
-    mysql_conn = mysql_conn ? mysql_conn : mysql.createConnection(config.mysql);
+    mysql_conn = mysql_conn ? mysql_conn : mysql.createPool(config.mysql);
     return new Promise((resolve, reject) => {
         if (!mysql_conn) return reject("Mysql client is not ready", "E101");
         mysql_conn.query(sql, args, (error, results, fields) => {
