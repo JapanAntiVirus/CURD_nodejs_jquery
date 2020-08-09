@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const student = require("./student");
 const body_parser = require("body-parser");
 const cors = require("cors");
@@ -17,7 +17,7 @@ app.get("/api/student/:id", student.getStudentById);
 app.post("/api/student/add", student.addStudent);
 app.delete("/api/student/:id", student.deleteStudent);
 app.get("/chitiet", (req, res) =>
-  res.sendFile(__dirname+"/public/" + path.join("chitiet.html"))
+  res.sendFile(__dirname + "/public/" + path.join("chitiet.html"))
 );
 
 app.listen(port, () =>
