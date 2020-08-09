@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Van anh</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="./js/index.js"></script>
+</head>
+
+<body>
+    <div class='container'>
+        <div class="row fixed-top" style='z-index:-1' id='toast-row'>
+            <div class='col-md-9'></div>
+            <div class='col-md-3'>
+                <div id='toast' class="toast " data-autohide="true" data-delay='1000' role="alert" aria-live="assertive"
+                    data-animation="true" aria-atomic="true">
+                    <div class="toast-header">
+                        <strong class="mr-auto text-primary"><i class="fa fa-warning text-danger"></i> Thông
+                            báo</strong>
+                        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+                    </div>
+                    <div class="toast-body overflow-auto" id='body_toast' style='padding:20px;'></div>
+                </div>
+            </div>
+        </div>
+
+        <div class='row form-group'>
+            <div class='col-md-3'>
+                <button class='btn btn-primary' data-toggle="modal" data-target="#myModal" id='btnThem'>Thêm</button>
+            </div>
+            <div class='col-md-9'></div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped">
+                <thead class='thead-light'>
+                    <tr>
+                        <th>STT</th>
+                        <th>Họ tên</th>
+                        <th>Mã sinh viên</th>
+                        <th>Lớp</th>
+                        <th>Ảnh</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id='table_body'>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Thêm sinh viên</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row form-group">
+                            <div class="col-md-2"><label class="col-form-label">Mã sinh viên<span
+                                        style='color:red'>*</span></label></div>
+                            <div class="col-md-4"><input type="text" class="form-control" id='msv' /></div>
+                            <div class="col-md-2"><label class="col-form-label">Số điện thoại</label></div>
+                            <div class="col-md-4"><input type="text" class="form-control" id='sdt' /></div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-2"><label class="col-form-label">Họ tên<span
+                                        style='color:red'>*</span></label></div>
+                            <div class="col-md-4"><input type="text" class="form-control" id='ho_ten' /></div>
+                            <div class="col-md-2"><label class="col-form-label">Ngày sinh</label></div>
+                            <div class="col-md-4"><input type="date" class="form-control" id='ngay_sinh' /></div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-2"><label class="col-form-label">Lớp<span
+                                        style='color:red'>*</span></label></div>
+                            <div class="col-md-4"><input type="text" class="form-control" id='lop' /></div>
+                            <div class="col-md-2"><label class="col-form-label">Địa chỉ</label></div>
+                            <div class="col-md-4"><input type="text" class="form-control" id='dia_chi' /></div>
+                        </div>
+                        <div class="row form-group">
+                                <label>Chọn ảnh:</label> <input type='file' onchange="readURL(this);" />
+                        </div>
+                        <div class="row form-group d-flex justify-content-center">
+                            <img id="image" src="#" alt="avatar" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-primary" id='btnLuu'>Lưu</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

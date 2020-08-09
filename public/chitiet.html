@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin chi tiết</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="./js/chitiet.js"></script>
+</head>
+
+<body>
+    <div class='container'>
+        <div class="row fixed-top" style='z-index:-1' id='toast-row'>
+            <div class='col-md-9'></div>
+            <div class='col-md-3'>
+                <div id='toast' class="toast " data-autohide="true" data-delay='1000' role="alert" aria-live="assertive"
+                    data-animation="true" aria-atomic="true">
+                    <div class="toast-header">
+                        <strong class="mr-auto text-primary"><i class="fa fa-warning text-danger"></i> Thông
+                            báo</strong>
+                        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+                    </div>
+                    <div class="toast-body overflow-auto" id='body_toast' style='padding:20px;'></div>
+                </div>
+            </div>
+        </div>
+
+        <div><strong>Thông tin chi tiết</strong></div>
+        <div>Mã sinh viên: <span id='msv'></span></div>
+        <div>Họ tên: <span id='ho_ten'></span></div>
+        <div>Lớp: <span id='lop'></span></div>
+        <div>Địa chỉ: <span id='dia_chi'></span></div>
+        <div>Số điện thoại: <span id='sdt'></span></div>
+        <div>Ngày sinh: <span id='ngay_sinh'></span></div>
+        <div><img src="" alt="image" id='image' style="max-width:50%; height:auto;"></div>
+
+    </div>
+</body>
+
+</html>
